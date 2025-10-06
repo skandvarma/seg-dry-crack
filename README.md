@@ -5,7 +5,7 @@ Text-conditioned segmentation model for detecting drywall taping areas and wall 
 ## Project Structure
 
 ```
-.
+script
 ├── train_clipseg.py        # Model training script
 ├── evaluate.py             # Model evaluation and metrics
 ├── generate_sam_masks.py   # Ground truth mask generation

@@ -1,0 +1,11 @@
+# Ignore data and prediction folders
+data/
+predictions/
+
+# Ignore all model weights
+*.pth
+
+# (Optional) Ignore other heavy or system files
+__pycache__/
+*.log
+*.tmp

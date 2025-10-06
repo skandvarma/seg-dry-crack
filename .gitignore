@@ -4,6 +4,7 @@ predictions/
 
 # Ignore all model weights
 *.pth
+.idea/
 
 # (Optional) Ignore other heavy or system files
 __pycache__/

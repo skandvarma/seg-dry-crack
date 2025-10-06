@@ -75,10 +75,8 @@ def evaluate():
             image = Image.open(img_path).convert("RGB")
             gt_mask = np.array(Image.open(mask_path).convert("L"))
 
-            # Fix 1: Process inputs correctly
             inputs = processor(text=[prompt], images=[image], return_tensors="pt")
 
-            # Fix 2: Use inputs correctly with .to(device)
             with torch.no_grad():
                 outputs = model(
                     input_ids=inputs['input_ids'].to(device),
@@ -88,10 +86,8 @@ def evaluate():
 
             logits = outputs.logits
 
-            # Fix 3: Handle logits reshaping correctly
             if logits.dim() == 2:
                 # Reshape from (batch_size * H * W,) to (batch_size, H, W)
-                # CLIPSeg outputs 352x352 by default
                 logits = logits.view(1, 352, 352)
 
             # Move to CPU and numpy
